@@ -1,3 +1,13 @@
+    
+import os   
+os.system("clear")
+
+class Player:
+     def __init__(self,name):
+         self.name = name
+     frontDoorKey = False
+
+
 
 def ScenePitStart():
     inp = input()
@@ -6,11 +16,13 @@ def ScenePitStart():
             print("You look")
             print("The End?")
             
-        case "Climb":
+        case "climb":
             print("you climb")
             print("The End?")
+            
         case _:
             print("Invalid Command")
+            print(input)
             ScenePitStart()
 
         
@@ -18,8 +30,8 @@ def ScenePitStart():
     
 def Start():   
     print("Enter a name!")
-    name = input()
-    print("Hello " + name + "! Press enter to continue or type back to reenter a name")
+    player = Player(input())
+    print("Hello " + player.name + "! Press enter to continue or type back to reenter a name")
     if input() == "back":
         Start()
     else:
